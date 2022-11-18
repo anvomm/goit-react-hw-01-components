@@ -1,30 +1,43 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileCard,
+  Description,
+  Name,
+  Location,
+  Tag,
+  Avatar,
+  Statistics,
+  StatisticsItem,
+  StatisticsItemLast,
+  StatisticsLabel,
+  StatisticsNumber,
+} from './Profile.styled';
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileCard>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" className="avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Description>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Statistics>
+        <StatisticsItem>
+          <StatisticsLabel>Followers</StatisticsLabel>
+          <StatisticsNumber>{stats.followers}</StatisticsNumber>
+        </StatisticsItem>
+        <StatisticsItem>
+          <StatisticsLabel>Views</StatisticsLabel>
+          <StatisticsNumber>{stats.views}</StatisticsNumber>
+        </StatisticsItem>
+        <StatisticsItemLast>
+          <StatisticsLabel>Likes</StatisticsLabel>
+          <StatisticsNumber>{stats.likes}</StatisticsNumber>
+        </StatisticsItemLast>
+      </Statistics>
+    </ProfileCard>
   );
 }
 
