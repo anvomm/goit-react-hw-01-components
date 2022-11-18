@@ -13,6 +13,7 @@ export const Statistics = ({ title, stats }) => (
     </ul>
   </section>
 );
+
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
