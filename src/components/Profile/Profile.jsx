@@ -8,7 +8,6 @@ import {
   Avatar,
   Statistics,
   StatisticsItem,
-  StatisticsItemLast,
   StatisticsLabel,
   StatisticsNumber,
 } from './Profile.styled';
