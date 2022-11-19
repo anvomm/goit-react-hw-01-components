@@ -17,7 +17,7 @@ export function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileCard>
       <Description>
-        <Avatar src={avatar} alt="User avatar" className="avatar" />
+        <Avatar src={avatar} alt={`${username} avatar`} />
         <Name>{username}</Name>
         <Tag>@{tag}</Tag>
         <Location>{location}</Location>
@@ -32,10 +32,10 @@ export function Profile({ username, tag, location, avatar, stats }) {
           <StatisticsLabel>Views</StatisticsLabel>
           <StatisticsNumber>{stats.views}</StatisticsNumber>
         </StatisticsItem>
-        <StatisticsItemLast>
+        <StatisticsItem>
           <StatisticsLabel>Likes</StatisticsLabel>
           <StatisticsNumber>{stats.likes}</StatisticsNumber>
-        </StatisticsItemLast>
+        </StatisticsItem>
       </Statistics>
     </ProfileCard>
   );
@@ -50,5 +50,5 @@ Profile.propTypes = {
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };

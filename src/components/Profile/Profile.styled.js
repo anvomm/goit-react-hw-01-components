@@ -58,16 +58,16 @@ export const Statistics = styled.ul`
   background-color: #d9faee;
 `;
 
-export const StatisticsItemLast = styled.li`
+export const StatisticsItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-basis: 100%;
   gap: 5px;
-  padding: 15px 20px;
-`;
+  padding: 15px 15px;
 
-export const StatisticsItem = styled(StatisticsItemLast)`
-  border-right: 1px solid #b2c2bc;
+  &:not(:last-child) {
+    border-right: 1px solid #b2c2bc;
+  }
 `;
 
 export const StatisticsLabel = styled.span`
